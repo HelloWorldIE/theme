@@ -1,0 +1,362 @@
+/**
+ * Theme Name:     CObulma
+ * Author:         Bryan Hurley
+ * Template:       obulma
+ * Text Domain:	   cobulma
+ * Description:    The Cobblestone Bulma Theme
+ */
+
+/* General Styles */
+.hidden, .logged-in .hide-logged-in {
+    display: none;
+}
+
+body .updated:not(.published) {
+    display: block;
+}
+
+.updated:not(.status-publish) {
+    display: none;
+}
+
+/* Opacity Classes */
+.op-5, .op-5::before {
+    opacity: .5 !important;
+}
+
+.has-tooltip-small[data-tooltip]::before {
+    font-size: 0.75rem; /* Adjust the font size for the tooltip */
+    padding: 2px 4px; /* Adjust padding for smaller tooltip */
+    white-space: nowrap; /* Ensure the tooltip doesn't wrap */
+    max-width: none; /* Override max-width if needed */
+}
+
+.has-tooltip-small.has-tooltip-arrow[data-tooltip]::after {
+    border-width: 4px; /* Adjust the size of the tooltip arrow */
+}
+
+/* Equal card heights */
+.card {
+    height: 100%;
+}
+
+/* Collapsible styling */
+[data-collapse] {
+    cursor: pointer;
+}
+
+.ld-topics-and-sections [data-collapse] [data-collapse] {
+    transition: opacity .4s;
+    opacity: 0;
+}
+
+[data-collapse]:hover [data-collapse] {
+    --bulma-button-background-l-delta: var(--bulma-button-hover-background-l-delta);
+    --bulma-button-border-l-delta: var(--bulma-button-hover-border-l-delta);
+    opacity: 1;
+}
+
+.collapsible-content {
+    max-height: 0px;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: max-height 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.collapsible-content.expanded {
+    max-height: 1000000px;
+    transform: scaleY(1);
+    overflow: visible;
+}
+
+/* Steps styles */
+ol.steps, ul.steps {
+    padding-left: 0px;
+}
+
+.steps-segment:after {
+    background-color: var(--bulma-info);
+}
+
+/* Learning Design Styles */
+.subtitle {
+    margin-top: 0.6em;
+}
+
+/* Swiper Styles */
+/* Ensure the swiper container takes up 70% of the viewport height */
+.swiper {
+    height: 70vh;
+    width: 100%;
+}
+
+/* Set each slide to be auto-width, and images to fit their container */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-height: 50vh;
+    max-width: 100%;
+    object-fit: contain; /* Ensures the image fits within the container while maintaining its aspect ratio */
+}
+
+.swiper.fullscreen .swiper-slide img {
+    max-height: 90vh;
+    max-width: 100%;
+    object-fit: contain; /* Ensures the image fits within the container while maintaining its aspect ratio */
+}
+
+/* Fullscreen adjustments */
+.swiper.fullscreen {
+    height: 100vh;
+}
+
+@media (max-width: 767px) {
+    .reverse-columns {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+}
+
+/* End Learning Design Styles */
+
+/* ACF Field Customisations */
+body .acf-input-prepend, body .acf-input-append, .acf-field input[type=number], .acf-field input[type=text], .acf-field input[type=password], .acf-field input[type=date], .acf-field input[type=datetime], .acf-field input[type=datetime-local], .acf-field input[type=email], .acf-field input[type=month], .acf-field input[type=number], .acf-field input[type=search], .acf-field input[type=tel], .acf-field input[type=time], .acf-field input[type=url], .acf-field input[type=week], .acf-field textarea, .acf-field select {
+    min-height: 40px;
+}
+
+div.acf-flexible-content .no-value-message {
+    padding: 23px;
+}
+div.acf-field-flexible-content.about-programme-details>.acf-input>.acf-flexible-content>.values {
+    margin-bottom: var(--bulma-content-block-margin-bottom) !important;
+}
+
+a.button.add-post {
+    min-width: 110px;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.acf-fields>.acf-field {
+    border: none !important;
+}
+
+.acf-field-668d5bddcf4a8 .values+.acf-actions {
+    margin-top: var(--bulma-content-block-margin-bottom);
+}
+
+.acf-field-668d52daca890 li {
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #d5d9dd;
+}
+
+body .acf-field.acf-accordion {
+    padding: 15px 12px !important;
+}
+
+.acf-input-append {
+    display: flex;
+    align-items: center;
+}
+
+.acf-label.acf-accordion-title {
+    border: 1px solid var(--bb-content-border-color);
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+body .acf-repeater>table,
+body .acf-table,
+body .acf-accordion {
+    background: none;
+}
+
+#acf-field_668e575f0cc58 {
+    min-height: 40px;
+}
+
+.select2-container.-acf .select2-selection,
+.select2-container .select2-selection--single {
+    min-height: 40px !important;
+    display: flex;
+    align-items: center;
+}
+
+body .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100%;
+}
+
+.acf-fc-layout-controls {
+    display: flex;
+    gap: 15px;
+    /* Space between buttons */
+    align-items: center;
+    padding: 10px;
+    /* Optional padding around the buttons */
+}
+
+.acf-fc-layout-controls .acf-icon {
+    font-size: 20px;
+    /* Increase icon size */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    /* Light background colour */
+    border-radius: 5px;
+    /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.acf-fc-layout-controls .acf-icon:hover {
+    background-color: #e0e0e0;
+    /* Darker background on hover */
+    transform: scale(1.1);
+    /* Slightly increase size on hover */
+}
+
+.acf-fc-layout-controls .acf-icon.acf-js-tooltip {
+    margin: 0 5px;
+    /* Additional spacing if needed */
+}
+
+body .acf-fields.-border,
+body .acf-flexible-content .layout {
+    background: none;
+    border-radius: 7px;
+}
+
+/* Define Base Colours and Their Sub-shades */
+:root {
+    --color1: #e6f7ff;
+    /* Light blue */
+    --color1-shade1: #cceeff;
+    /* Sub-shade 1 */
+    --color1-shade2: #b3e6ff;
+    /* Sub-shade 2 */
+
+    --color2: #fff7e6;
+    /* Light yellow */
+    --color2-shade1: #ffeecc;
+    /* Sub-shade 1 */
+    --color2-shade2: #ffe6b3;
+    /* Sub-shade 2 */
+
+    --color3: #e6ffe6;
+    /* Light green */
+    --color3-shade1: #ccffcc;
+    /* Sub-shade 1 */
+    --color3-shade2: #b3ffb3;
+    /* Sub-shade 2 */
+
+    --color4: #ffe6f7;
+    /* Light pink */
+    --color4-shade1: #ffccf0;
+    /* Sub-shade 1 */
+    --color4-shade2: #ffb3e8;
+    /* Sub-shade 2 */
+
+    --color5: #f7ffe6;
+    /* Light lime */
+    --color5-shade1: #efffcc;
+    /* Sub-shade 1 */
+    --color5-shade2: #e8ffb3;
+    /* Sub-shade 2 */
+
+    --color6: #e6e6ff;
+    /* Light purple */
+    --color6-shade1: #ccccff;
+    /* Sub-shade 1 */
+    --color6-shade2: #b3b3ff;
+    /* Sub-shade 2 */
+}
+
+/* Base Topic Styles */
+.acf-flexible-content>.values>.layout {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+/* Dynamic Colouring with nth-of-type */
+.acf-flexible-content>.values>.layout:nth-of-type(6n+1) {
+    background-color: var(--color1);
+}
+
+.acf-flexible-content>.values>.layout:nth-of-type(6n+2) {
+    background-color: var(--color2);
+}
+
+.acf-flexible-content>.values>.layout:nth-of-type(6n+3) {
+    background-color: var(--color3);
+}
+
+.acf-flexible-content>.values>.layout:nth-of-type(6n+4) {
+    background-color: var(--color4);
+}
+
+.acf-flexible-content>.values>.layout:nth-of-type(6n+5) {
+    background-color: var(--color5);
+}
+
+.acf-flexible-content>.values>.layout:nth-of-type(6n+6) {
+    background-color: var(--color6);
+}
+
+/* Sub-topic Alternating Shading for Each Topic */
+.acf-flexible-content .layout:nth-of-type(6n+1) .acf-fields .layout:nth-of-type(odd) {
+    background-color: var(--color1-shade1);
+}
+
+.acf-flexible-content .layout:nth-of-type(6n+1) .acf-fields .layout:nth-of-type(even) {
+    background-color: var(--color1-shade2);
+}
+
+.acf-flexible-content .layout:nth-of-type(6n+2) .acf-fields .layout:nth-of-type(odd) {
+    background-color: var(--color2-shade1);
+}
+
+.acf-flexible-content .layout:nth-of-type(6n+2) .acf-fields .layout:nth-of-type(even) {
+    background-color: var(--color2-shade2);
+}
+
+.acf-flexible-content .layout:nth-of-type(6n+3) .acf-fields .layout:nth-of-type(odd) {
+    background-color: var(--color3-shade1);
+}
+
+.acf-flexible-content .layout:nth-of-type(6n+3) .acf-fields .layout:nth-of-type(even) {
+    background-color: var(--color3-shade2);
+}
+
+.acf-flexible-content .layout:nth-of-type(6n+4) .acf-fields .layout:nth-of-type(odd) {
+    background-color: var(--color4-shade1);
+}
+
+.acf-flexible-content .layout:nth-of-type(6n+4) .acf-fields .layout:nth-of-type(even) {
+    background-color: var(--color4-shade2);
+}
+
+.acf-flexible-content .layout:nth-of-type(6n+5) .acf-fields .layout:nth-of-type(odd) {
+    background-color: var(--color5-shade1);
+}
+
+.acf-flexible-content .layout:nth-of-type(6n+5) .acf-fields .layout:nth-of-type(even) {
+    background-color: var(--color5-shade2);
+}
+
+.acf-flexible-content .layout:nth-of-type(6n+6) .acf-fields .layout:nth-of-type(odd) {
+    background-color: var(--color6-shade1);
+}
+
+.acf-flexible-content .layout:nth-of-type(6n+6) .acf-fields .layout:nth-of-type(even) {
+    background-color: var(--color6-shade2);
+}
